@@ -1,5 +1,6 @@
 "use client";
 
+import clsx from "clsx";
 import { Controller, useFormContext } from "react-hook-form";
 
 const Input = ({
@@ -16,14 +17,24 @@ const Input = ({
       control={control}
       name={name}
       render={({ field, fieldState: { error } }) => (
-        <div>
+        <div className="space-y-1">
           <input
-            className="w-full px-4 py-2.5 bg-white dark:bg-gray-950 border  dark:border-gray-700 rounded-xl shadow-sm focus:outline-none focus:ring focus:ring-white/20 focus:border-transparent placeholder-gray-400 dark:placeholder-gray-500 text-sm text-gray-900 dark:text-white transition"
             {...field}
             placeholder={placeHolder}
+            className={clsx(
+              "w-full px-4 py-2.5 rounded-xl shadow-sm text-sm transition focus:outline-none focus:ring-2",
+              "bg-white dark:bg-gray-950",
+              "text-gray-900 dark:text-white",
+              "placeholder-gray-400 dark:placeholder-gray-500",
+              error
+                ? "border border-red-500 focus:ring-red-400"
+                : "border border-gray-200 dark:border-gray-700 focus:ring-blue-500 focus:border-transparent"
+            )}
           />
           {error && (
-            <span className="text-red-500/95 text-xs ">{error.message}</span>
+            <span className="text-red-500 text-xs font-medium">
+              {error.message}
+            </span>
           )}
         </div>
       )}
