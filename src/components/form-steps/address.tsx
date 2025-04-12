@@ -13,7 +13,6 @@ const AddressForm = () => {
       <div className="space-y-2">
         <Input name="street" placeHolder="Street Address" />
         <Input name="city" placeHolder="City" />
-        <Input name="state" placeHolder="State" />
         <Input name="zip" placeHolder="Zip Code" />
       </div>
     </div>

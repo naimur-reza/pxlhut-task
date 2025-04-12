@@ -21,7 +21,6 @@ export default function FormSummary() {
       fields: [
         { label: "Street Address", value: values.street },
         { label: "City", value: values.city },
-        { label: "State", value: values.state },
         { label: "Zip Code", value: values.zip },
       ],
     },
