@@ -1,152 +1,104 @@
 @import "tailwindcss";
 
-:root {
-  /* Base colors */
-  --background: #f8fafc;
-  --foreground: #0f172a;
+@custom-variant dark (&:is(.dark *));
 
-  /* Primary colors - Vibrant blue */
-  --primary: #3b82f6;
-  --primary-foreground: #ffffff;
-  --primary-hover: #2563eb;
-  --primary-active: #1d4ed8;
+@theme {
+  --color-border: hsl(var(--border));
+  --color-input: hsl(var(--input));
+  --color-ring: hsl(var(--ring));
+  --color-background: hsl(var(--background));
+  --color-foreground: hsl(var(--foreground));
 
-  /* Secondary colors - Soft teal */
-  --secondary: #0d9488;
-  --secondary-foreground: #ffffff;
-  --secondary-hover: #0f766e;
-  --secondary-active: #115e59;
+  --color-primary: hsl(var(--primary));
+  --color-primary-foreground: hsl(var(--primary-foreground));
 
-  /* Accent colors - Warm amber */
-  --accent: #f59e0b;
-  --accent-foreground: #ffffff;
-  --accent-hover: #d97706;
-  --accent-active: #b45309;
+  --color-secondary: hsl(var(--secondary));
+  --color-secondary-foreground: hsl(var(--secondary-foreground));
 
-  /* Success/error states */
-  --success: #22c55e;
-  --error: #ef4444;
+  --color-destructive: hsl(var(--destructive));
+  --color-destructive-foreground: hsl(var(--destructive-foreground));
 
-  /* Neutral tones */
-  --muted: #94a3b8;
-  --muted-foreground: #64748b;
+  --color-muted: hsl(var(--muted));
+  --color-muted-foreground: hsl(var(--muted-foreground));
 
-  /* Border colors */
-  --border: #e2e8f0;
-  --border-hover: #cbd5e1;
-  --border-active: #94a3b8;
+  --color-accent: hsl(var(--accent));
+  --color-accent-foreground: hsl(var(--accent-foreground));
 
-  /* Input backgrounds */
-  --input: #ffffff;
-  --input-hover: #f1f5f9;
-  --input-focus: #f8fafc;
+  --color-popover: hsl(var(--popover));
+  --color-popover-foreground: hsl(var(--popover-foreground));
 
-  /* Card/component backgrounds */
-  --card: #ffffff;
-  --card-foreground: #0f172a;
-  --card-shadow: rgba(0, 0, 0, 0.05);
+  --color-card: hsl(var(--card));
+  --color-card-foreground: hsl(var(--card-foreground));
+
+  --radius-lg: var(--radius);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-sm: calc(var(--radius) - 4px);
+  --color-error: hsl(0 100% 50%);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #090e19;
-    --foreground: #f8fafc;
-
-    --primary: #3b82f6;
-    --primary-foreground: #ffffff;
-    --primary-hover: #60a5fa;
-    --primary-active: #93c5fd;
-
-    --secondary: #14b8a6;
-    --secondary-foreground: #ffffff;
-    --secondary-hover: #2dd4bf;
-    --secondary-active: #5eead4;
-
-    --accent: #f59e0b;
-    --accent-foreground: #ffffff;
-    --accent-hover: #fbbf24;
-    --accent-active: #fcd34d;
-
-    --success: #4ade80;
-    --error: #f87171;
-
-    --muted: #64748b;
-    --muted-foreground: #94a3b8;
-
-    --border: #1e293b;
-    --border-hover: #334155;
-    --border-active: #475569;
-
-    --input: #1e293b;
-    --input-hover: #334155;
-    --input-focus: #475569;
-
-    --card: #121924;
-    --card-foreground: #f8fafc;
-    --card-shadow: rgba(0, 0, 0, 0.25);
+@utility container {
+  margin-inline: auto;
+  padding-inline: 2rem;
+  @media (width >= --theme(--breakpoint-sm)) {
+    max-width: none;
+  }
+  @media (width >= 1400px) {
+    max-width: 1400px;
   }
 }
 
-@theme {
-  --color-primary: var(--primary);
-  --color-primary-foreground: var(--primary-foreground);
-  --color-secondary: var(--secondary);
-  --color-secondary-foreground: var(--secondary-foreground);
-  --color-accent: var(--accent);
-  --color-accent-foreground: var(--accent-foreground);
-  --color-border: var(--border);
-  --color-border-hover: var(--border-hover);
-  --color-border-active: var(--border-active);
-  --color-error: var(--error);
-  --color-success: var(--success);
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+    --primary: 221.2 83.2% 53.3%;
+    --primary-foreground: 210 40% 98%;
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 221.2 83.2% 53.3%;
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+    --primary: 217.2 91.2% 59.8%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 224.3 76.3% 48%;
+  }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-feature-settings: "rlig" 1, "calt" 1;
-}
-
-/* Custom form step indicator styles */
-.step-indicator {
-  --step-active: var(--primary);
-  --step-complete: var(--success);
-  --step-incomplete: var(--muted);
-  --connector-bg: var(--border);
-  --connector-complete: var(--success);
-}
-
-/* Form control focus states */
-input:focus-visible,
-select:focus-visible,
-textarea:focus-visible {
-  outline: 2px solid var(--primary);
-  outline-offset: 2px;
-}
-
-/* Button styling specifics */
-.btn-primary {
-  background-color: var(--primary);
-  color: var(--primary-foreground);
-}
-
-.btn-primary:hover {
-  background-color: var(--primary-hover);
-}
-
-.btn-secondary {
-  background-color: var(--secondary);
-  color: var(--secondary-foreground);
-}
-
-.btn-submit {
-  background-color: var(--success);
-  color: var(--primary-foreground);
-}
-
-.form-card {
-  background: var(--card);
-  border: 1px solid var(--border);
-  box-shadow: 0 4px 6px var(--card-shadow);
-  border-radius: 1rem;
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
 }
