@@ -148,7 +148,7 @@ const MultiStepForm = () => {
               type="button"
               onClick={goToPreviousStep}
               disabled={currentStep === 0}
-              className="px-4 py-2 rounded-xl border disabled:opacity-50"
+              className="px-4 py-2 rounded-xl cursor-pointer border disabled:opacity-50"
             >
               Previous
             </button>
@@ -156,7 +156,7 @@ const MultiStepForm = () => {
             {currentStep < steps.length - 1 ? (
               <button
                 type="submit"
-                className="px-4 py-2 rounded-xl bg-primary hover:bg-primary/90 text-white font-medium"
+                className="px-4 cursor-pointer py-2 rounded-xl bg-primary hover:bg-primary/90 text-white font-medium"
               >
                 Next
               </button>
@@ -164,7 +164,7 @@ const MultiStepForm = () => {
               <button
                 type="submit"
                 disabled={mutation.isPending}
-                className="px-4 py-2 rounded-xl bg-green-600 hover:bg-green-700 text-white font-medium"
+                className="px-4 py-2 rounded-xl cursor-pointer bg-green-600 hover:bg-green-700 text-white font-medium"
               >
                 {mutation.isPending ? "Submitting..." : "Submit"}
               </button>

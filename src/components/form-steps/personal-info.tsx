@@ -2,7 +2,7 @@ import Input from "../form/input";
 
 const PersonalInfoForm = () => {
   return (
-    <div className="space-y-6">
+    <div className="space-y-6 form-card p-5">
       <h2 className="text-xl font-semibold text-gray-800 dark:text-white">
         Personal Information
       </h2>
