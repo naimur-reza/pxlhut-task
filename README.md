@@ -1,8 +1,39 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🚀 My Next.js Project
 
-## Getting Started
+# 🚀 Multi-Step Form Validation - Next.js Project
 
-First, run the development server:
+This project is a multi-step form built with **Next.js**, **React**, **Zod**, and **Tailwind CSS**. It includes step-by-step validation, clean UI, and modern architecture — perfect for onboarding flows, registration, or profile setups.
+
+## 📦 Tech Stack
+
+- **Next.js** (App Router)
+- **React**
+- **Tailwind CSS**
+- **TypeScript** (optional, remove if you're using JS)
+- **Zod** (for form validation)
+
+## 🛠️ Getting Started
+
+Make sure you have **Node.js** installed (`v16+` recommended).
+
+### 1. Clone the repo
+
+```bash
+git clone https://github.com/your-username/your-project.git
+cd your-project
+```
+
+### 2. Install dependencies
+
+```bash
+npm install
+# or
+yarn
+# or
+pnpm install
+```
+
+### 3. Run the dev server
 
 ```bash
 npm run dev
@@ -10,28 +41,37 @@ npm run dev
 yarn dev
 # or
 pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+App will be live at: [http://localhost:3000](http://localhost:3000)
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 🧪 Testing (if setup)
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+npm run test
+```
 
-## Learn More
+## 📦 Build for Production
 
-To learn more about Next.js, take a look at the following resources:
+```bash
+npm run build
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Then start:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+```bash
+npm start
+```
 
-## Deploy on Vercel
+## 💡 Tips
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- Use `zod` for form validation.
+- Add `eslint` and `prettier` for clean code.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
-"# pxlhut-task" 
+## 🧑‍💻 Author
+
+**Naimur Reza**
+
+## 🌟 Show Some Love
+
+If this helped you out, give it a ⭐ on GitHub 🙌
