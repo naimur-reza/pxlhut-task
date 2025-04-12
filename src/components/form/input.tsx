@@ -6,9 +6,13 @@ import { Controller, useFormContext } from "react-hook-form";
 const Input = ({
   name,
   placeHolder,
+  type = "text",
+  label,
 }: {
   name: string;
   placeHolder?: string;
+  type?: string;
+  label?: string;
 }) => {
   const { control } = useFormContext();
 
@@ -18,7 +22,9 @@ const Input = ({
       name={name}
       render={({ field, fieldState: { error } }) => (
         <div className="space-y-1">
+          {label && <label className="text-sm font-medium">{label}</label>}
           <input
+            type={type}
             {...field}
             placeholder={placeHolder}
             className={clsx(

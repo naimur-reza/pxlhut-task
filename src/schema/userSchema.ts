@@ -4,7 +4,7 @@ export const userSchema = z
   .object({
     name: z.string().min(1, "Name is required"),
     email: z.string().email("Invalid email address"),
-    phone: z.string().optional(),
+    phone: z.string().min(10, "Min length is 10 numbers"),
     street: z.string().min(1, "Street is required"),
     city: z.string().min(1, "City is required"),
     state: z.string().min(1, "State is required"),
