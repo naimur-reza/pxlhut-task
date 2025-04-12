@@ -19,7 +19,7 @@ Make sure you have **Node.js** installed (`v16+` recommended).
 ### 1. Clone the repo
 
 ```bash
-git clone https://github.com/your-username/your-project.git
+git clone https://github.com/naimur-reza/pxlhut-task
 cd your-project
 ```
 
